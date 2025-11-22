@@ -4,29 +4,24 @@ import diagramRoutes from "./routes/diagramRoutes.js";
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './docs/swaggerConfig.js';
 import dotenv from "dotenv";
+import { all } from "axios";
 
 dotenv.config();
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', process.env.FRONTEND_URL];
+const allowedOrigins = ['http://localhost:5173', process.env.FRONTEND_URL, 'http://diagrambuilder.vercel.app',
+'diagrambuilder-git-main-bernardo-s-projects-c85a4914.vercel.app',
+'diagrambuilder-rczfscrfn-bernardo-s-projects-c85a4914.vercel.app'];
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: allowedOrigins,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
   credentials: true,
   optionsSuccessStatus: 204 
 };
 
-// Use as opções de CORS configuradas
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
