@@ -7,16 +7,15 @@ import { useDiagramActions } from '../../hooks/useDiagramActions.js';
 import { useReactFlow } from '@xyflow/react';
 
 const ElementsSideBar = () => {
-
     const location = useLocation();
 
-    const { isOpen, diagramName, reactFlowRef } = useDiagram();
+    const { isOpen, diagramName } = useDiagram();
 
     const { id } = useParams();
 
     const { toObject } = useReactFlow();
 
-    const { handleExportDiagram, saveFlowData } = useDiagramActions();
+    const { saveFlowData } = useDiagramActions();
 
     const [selectedArchitecture, setSelectedArchitecture] = useState(location.state?.initialArchitecture);
     const [showContent, setShowContent] = useState(false);
@@ -44,10 +43,6 @@ const ElementsSideBar = () => {
                         <SelectArchitecture selectedArchitecture={selectedArchitecture} setSelectedArchitecture={setSelectedArchitecture} />
                     </div>
                     <div className="flex flex-col justify-start items-start mb-8 ml-5 gap-2 opacity-0 animate-fadeIn w-full relative z-40">
-                        <button onClick={() => handleExportDiagram(reactFlowRef)} className=' flex justify-center items-center w-[70%] h-auto rounded-xl bg-blue-700
-                            border-2 border-blue-700 text-white font-bold py-2 px-3 cursor-pointer text-sm xl:text-lg gap-2
-                            hover:text-blue-700 hover:bg-white transition-all hover:translate-y-[-3px] duration-600 whitespace-nowrap'>
-                            <span className="material-symbols-outlined">file_export</span>Exportar</button>
                             <button onClick={() => saveFlowData(id, toObject, diagramName)} className='flex justify-center items-center w-[70%] h-auto rounded-xl bg-green-700
                             border-2 border-green-700 text-white font-bold py-2 px-3 cursor-pointer text-sm xl:text-lg gap-2
                             hover:text-green-700 hover:bg-white transition-all hover:translate-y-[-3px] duration-600 whitespace-nowrap'>

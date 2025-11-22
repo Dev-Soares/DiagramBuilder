@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAlert } from "../contexts/AlertContext";
-import { useCallback } from "react";
-import { exportDiagramAsPDF } from "../utils/exportDiagram.js";
+
 
 
 export const useDiagramActions = () => {
@@ -20,12 +19,6 @@ export const useDiagramActions = () => {
         return false;
     }
 
-    const handleExportDiagram = useCallback( async (reactFlowRef) => {
-        console.log('Exporting diagram as PDF...');
-        if (reactFlowRef.current) {
-            await exportDiagramAsPDF(reactFlowRef.current);
-        }
-    }, []);
 
 
     const createNewDiagram = async () => {
@@ -131,6 +124,5 @@ export const useDiagramActions = () => {
             fetchDiagram,
             deleteDiagram,
             saveFlowData,
-            handleExportDiagram 
         }
 }
