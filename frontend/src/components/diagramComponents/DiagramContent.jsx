@@ -3,7 +3,7 @@ import '@xyflow/react/dist/style.css';
 import '../../assets/reactflow.css';
 import ElementsSideBar from './ElementsSideBar';
 import DiagramHeader from './DiagramHeader';
-import DataSideBar from './DataSideBar';
+
 import { useParams } from 'react-router-dom';
 
 
@@ -20,7 +20,7 @@ const DiagramContent = () => {
 
     
 
-    <main className='w-full h-screen overflow-hidden hidden lg:block'>
+    <main className='w-full h-screen overflow-hidden'>
 
       <DiagramHeader />
       <section className='h-[90%] w-full flex justify-between bg-gray-100 relative'>
@@ -30,7 +30,7 @@ const DiagramContent = () => {
         <div className='flex flex-row w-full h-screen overflow-hidden'>
           <DiagramFlowSection id={id} /> {/* Seção principal do diagrama onde o React Flow é renderizado */}
 
-          <DataSideBar id={id} /> {/* Seção lateral que exibe os dados do nó selecionado para edição */}
+          
 
         </div>
 
