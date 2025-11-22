@@ -92,7 +92,7 @@ const awsIcons = [
     ],
   },
   {
-    category: "Networking & Content Delivery",
+    category: "Networking",
     icons: [
       { component: ArchitectureServiceAmazonVirtualPrivateCloud, id: "amazon-vpc", label: "Amazon VPC", type: "CustomNode", color: "#8957e5" },
       { component: ArchitectureServiceAmazonRoute53, id: "amazon-route53", label: "Amazon Route 53", type: "CustomNode", color: "#8957e5" },
@@ -104,7 +104,7 @@ const awsIcons = [
     ],
   },
   {
-    category: "Security, Identity, & Compliance",
+    category: "Security",
     icons: [
       { component: ArchitectureServiceAWSIdentityandAccessManagement, id: "aws-iam", label: "AWS IAM", type: "CustomNode", color: "#dc3243" },
       { component: ArchitectureServiceAWSKeyManagementService, id: "aws-kms", label: "AWS KMS", type: "CustomNode", color: "#dc3243" },
@@ -116,7 +116,7 @@ const awsIcons = [
     ],
   },
   {
-    category: "Developer Tools",
+    category: "Tools",
     icons: [
       { component: ArchitectureServiceAWSCodeCommit, id: "aws-codecommit", label: "AWS CodeCommit", type: "CustomNode", color: "#c925d1" },
       { component: ArchitectureServiceAWSCodeBuild, id: "aws-codebuild", label: "AWS CodeBuild", type: "CustomNode", color: "#c925d1" },
@@ -126,7 +126,7 @@ const awsIcons = [
     ],
   },
   {
-    category: "Management & Governance",
+    category: "Management",
     icons: [
       { component: ArchitectureServiceAmazonCloudWatch, id: "amazon-cloudwatch", label: "Amazon CloudWatch", type: "CustomNode", color: "#e71d75" },
       { component: ArchitectureServiceAWSConfig, id: "aws-config", label: "AWS Config", type: "CustomNode", color: "#e71d75" },
@@ -136,7 +136,7 @@ const awsIcons = [
     ],
   },
   {
-    category: "Application Integration",
+    category: "Integration",
     icons: [
       { component: ArchitectureServiceAmazonSimpleQueueService, id: "amazon-sqs", label: "Amazon SQS", type: "CustomNode", color: "#e71d75" },
       { component: ArchitectureServiceAmazonSimpleNotificationService, id: "amazon-sns", label: "Amazon SNS", type: "CustomNode", color: "#e71d75" },

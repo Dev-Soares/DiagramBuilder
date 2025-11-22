@@ -84,7 +84,7 @@ const azureIcons = [
     ],
   },
   {
-    category: "Networking & Content Delivery",
+    category: "Networking",
     icons: [
       { component: AzVirtualNetwork, id: "az-vnet", label: "Azure Virtual Network" },
       { component: AzLoadBalancer, id: "az-load-balancer", label: "Azure Load Balancer" },
@@ -96,7 +96,7 @@ const azureIcons = [
     ],
   },
   {
-    category: "Security & Identity",
+    category: "Security",
     icons: [
       { component: ActiveDirectory, id: "active-directory", label: "Azure Active Directory" },
       { component: AzKeyVault, id: "az-key-vault", label: "Azure Key Vault" },
@@ -106,7 +106,7 @@ const azureIcons = [
     ],
   },
   {
-    category: "Developer Tools",
+    category: "Tools",
     icons: [
       { component: VisualStudioTeamServices, id: "vsts", label: "Visual Studio Team Services" },
       { component: VisualStudioTeamServicesGitHub, id: "vsts-github", label: "VSTS GitHub Source" },
@@ -114,7 +114,7 @@ const azureIcons = [
     ],
   },
   {
-    category: "Management & Governance",
+    category: "Management",
     icons: [
       { component: AzMonitor, id: "az-monitor", label: "Azure Monitor" },
       { component: AzAutomation, id: "az-automation", label: "Azure Automation" },
@@ -122,7 +122,7 @@ const azureIcons = [
     ],
   },
   {
-    category: "Application Integration",
+    category: "Integration",
     icons: [
       { component: AzServiceBus, id: "az-service-bus", label: "Azure Service Bus" },
       { component: AzEventHubs, id: "az-event-hubs", label: "Azure Event Hubs" },

@@ -22,6 +22,7 @@ const DiagramFlowSection = ({ id }) => {
         onConnect,
         nodeTypes,
         setDiagramName,
+        reactFlowRef
     } = useDiagram(); //ACESSING CONTEXT VALUES
 
     const { fetchDiagram } = useDiagramActions();
@@ -64,8 +65,6 @@ const DiagramFlowSection = ({ id }) => {
 
         } catch (error) {
             console.error('Error loading diagram:', error);
-
-
         }
     };
 
@@ -74,8 +73,6 @@ const DiagramFlowSection = ({ id }) => {
     }, []);
 
     // tipos de nodes customizados, podem ser adcionados mais outros
-
-    const reactFlowWrapper = useRef(null);
 
     const { screenToFlowPosition } = useReactFlow();
 
@@ -127,7 +124,7 @@ const DiagramFlowSection = ({ id }) => {
     );
 
     return (
-        <section className='h-[90vh] w-screen relative flex-1' ref={reactFlowWrapper}>
+        <section className='h-[90vh] w-screen relative flex-1' ref={reactFlowRef}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

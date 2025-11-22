@@ -30,17 +30,17 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
       {iconsSource.map((group) => (
         <div key={group.category} className="mb-4">
           <div 
-            className="flex items-center justify-between cursor-pointer p-2 rounded hover:bg-gray-100 transition-colors"
+            className="flex items-center justify-between cursor-pointer p-2 rounded hover:bg-gray-100 transition-colors duration-300"
             onClick={() => toggleCategory(group.category)}
           >
-            <h3 className='text-md font-semibold'>{group.category}</h3>
+            <h3 className='text-sm lg:text-lg font-semibold'>{group.category}</h3>
             <span className={`material-symbols-outlined transition-transform duration-300 ${expandedCategories[group.category] ? 'rotate-180' : ''}`}>
               expand_more
             </span>
           </div>
           
-          <div className={`overflow-hidden transition-all duration-300 ${expandedCategories[group.category] ? 'max-h-96 mt-4' : 'max-h-0'}`}>
-            <div className='grid grid-cols-2 gap-4'>
+          <div className={`overflow-y-auto transition-all duration-300 ${expandedCategories[group.category] ? 'max-h-96 mt-4' : 'max-h-0'}`}>
+            <div className='flex flex-wrap gap-4'>
               {group.icons.map(({ component: IconComponent, id, label, color }, idx) => {
                 const data = {
                   id,
@@ -70,7 +70,7 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
                     <div className="h-10 w-10 flex items-center justify-center flex-shrink-0 mr-2">
                       <IconComponent className="h-8 w-8 text-gray-500" />
                     </div>
-                    <span className=' lg:text-[10px] xl:text-[11px] 2xl:text-sm'>{label}</span>
+                    <span className=' text-sm lg:text-md xl:text-[11px] 2xl:text-sm'>{label}</span>
                   </div>
                 );
               })}

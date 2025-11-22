@@ -11,7 +11,6 @@ const nodeTypes = {
 const DiagramExample = () => {
 
     const [nodes, setNodes, onNodesChange] = useNodesState([
-
         {
             id: 'cloud-1',
             type: 'customNode',
@@ -135,7 +134,7 @@ const DiagramExample = () => {
                 nodeOrigin={[0.5, 0.5]}
                 viewport={{x:0, y:0, zoom: 0.5}}
             >
-                <Background color="#d1d5db" gap={16} />
+                <Background variant="dots" gap={12} size={1} />
             </ReactFlow>
         </div>
     );

@@ -21,13 +21,13 @@ const SelectArchitecture = ({ selectedArchitecture, setSelectedArchitecture }) =
       <div ref={containerRef} className='relative w-[80%] cursor-pointer'>
         <button
           onClick={() => setIsSelectOpen((s) => !s)}
-          className='w-full h-auto p-2 px-4 bg-white flex justify-between items-center rounded-xl border-2 border-gray-200 shadow-md max-h-16 cursor-pointer'
+          className='w-full h-auto p-2 px-4 bg-white flex justify-between items-center rounded-xl border-2 border-gray-200 shadow-md max-h-16 xl:max-h-18 cursor-pointer'
           type="button"
         >
           {selectedArchitecture === 'aws' ? (
-            <img src='/aws-icon.webp' className='max-w-[15%]' alt="AWS" />
+            <img src='/aws-icon.webp' className='max-w-[45%] lg:max-w-[30%] 2xl:max-w-[25%' alt="AWS" />
           ) : (
-            <img src='/azure-icon.png' className='max-w-[15%]' alt="Azure" />
+            <img src='/azure-icon.png' className='max-w-[45%] lg:max-w-[30%] 2xl:max-w-[25%]  ' alt="Azure" />
           )}
           <span className="material-symbols-outlined">
             {isSelectOpen ? 'arrow_drop_up' : 'arrow_drop_down'}
@@ -40,7 +40,7 @@ const SelectArchitecture = ({ selectedArchitecture, setSelectedArchitecture }) =
             role="menu"
           >
             <button
-              className='w-full text-left p-2 px-4 flex items-center gap-4 hover:bg-gray-100 cursor-pointer'
+              className='w-full text-left p-2 px-4 flex items-center gap-4 text-sm hover:bg-gray-100 cursor-pointer'
               onClick={() => { setSelectedArchitecture('aws'); setIsSelectOpen(false); }}
               type="button"
             >
@@ -49,7 +49,7 @@ const SelectArchitecture = ({ selectedArchitecture, setSelectedArchitecture }) =
             </button>
 
             <button
-              className='w-full text-left p-2 px-4 flex items-center gap-4 hover:bg-gray-100 cursor-pointer'
+              className='w-full text-left p-2 px-4 flex items-center gap-4 text-sm hover:bg-gray-100 cursor-pointer'
               onClick={() => { setSelectedArchitecture('azure'); setIsSelectOpen(false); }}
               type="button"
             >

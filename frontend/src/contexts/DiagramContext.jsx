@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef } from 'react';
 import { addEdge } from '@xyflow/react';
 import { useNodesState, useEdgesState } from '@xyflow/react';
 import CustomNode from '../components/diagramComponents/CustomNode';
@@ -24,9 +24,7 @@ export const DiagramProvider = ({ children }) => {
     
     const [isOpen, setIsOpen] = useState(getInitialIsOpen());
 
-    
-
-   
+    const reactFlowRef = useRef(null);
 
     const nodeTypes = {
         CustomNode: CustomNode
@@ -78,6 +76,7 @@ export const DiagramProvider = ({ children }) => {
         edges,
         isOpen,
         diagramName,
+        reactFlowRef,
 
         // SETTERS (Funções para modificar o estado)
         setNodes,
