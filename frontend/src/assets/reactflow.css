@@ -1,0 +1,29 @@
+
+.react-flow__controls-button {
+  border: 0.1px solid #bbb; /* Adiciona uma borda leve */
+  width: 40px;      /* Aumenta a largura do botão (padrão é 32px) */
+  height: 40px;     /* Aumenta a altura do botão (padrão é 32px) */
+  border-radius: 6px; /* Aumenta um pouco a borda, para ficar mais suave */
+  margin: 4px;      /* Aumenta a margem entre os botões */
+}
+
+/* Aumenta o tamanho dos ícones SVG dentro dos botões */
+.react-flow__controls-button svg {
+  width: 20px;      
+}
+
+.react-flow__handle {
+  width: 18px !important;   /* padrão é 10px */
+  height: 18px !important;
+  border-radius: 50% !important;
+  background-color: oklch(43.8% 0.218 303.724) !important; /* Cor personalizada */
+  border: 2px solid #fff !important; /* Borda branca para destaque */
+}
+
+.react-flow__edge-path {
+  stroke: oklch(43.8% 0.218 303.724);
+  stroke-width: 3px;
+  stroke-linecap: butt;    /* remove ponta arredondada */
+  stroke-linejoin: miter;  /* cantos mais "quadrados" */
+  vector-effect: non-scaling-stroke; /* mantém espessura independente do zoom (opcional) */
+}

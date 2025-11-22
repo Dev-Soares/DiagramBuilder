@@ -1,0 +1,20 @@
+
+
+generator client {
+  provider      = "prisma-client-js"
+}
+
+datasource db {
+  // Use the mongodb provider
+  provider = "mongodb"
+  // The connection string is loaded from your .env file
+  url      = env("DB_URI")
+}
+
+
+model diagram {
+
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  flowData    Json?
+  
+}

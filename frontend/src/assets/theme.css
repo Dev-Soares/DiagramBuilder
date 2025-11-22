@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "sans-serif";
+}
+
+@layer utilities {
+  .input-border {
+    border: 0.1px solid #bbb;
+  }
+
+  .nav-diagram-border {
+    border: 0.1px solid #bbb;
+  }  
+  .no-select {
+    /* Propriedade padrão (moderna) */
+    user-select: none;
+
+    /* Prefixo para navegadores WebKit (como Chrome e Safari) */
+    -webkit-user-select: none;
+
+    /* Prefixo para Firefox */
+    -moz-user-select: none;
+
+    /* Prefixo para versões mais antigas do IE/Edge */
+    -ms-user-select: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes custom-enter {
+  0% {
+    transform: translate3d(0, calc(100% + 1rem), 0) scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes custom-leave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
+
+.animate-custom-enter {
+  animation: custom-enter 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+
+.animate-custom-leave {
+  animation: custom-leave 0.4s forwards cubic-bezier(0.06, 0.71, 0.55, 1);
+}
