@@ -1,20 +1,8 @@
 import { useState } from "react";
-import awsIcons from "../../icons/awsIcons";
-import azureIcons from "../../icons/azureIcons.js";
+import languageIcons from "../../icons/languageIcons";
 
 const ElementList = ({ onDragStart, selectedArchitecture }) => {
   const [expandedCategories, setExpandedCategories] = useState({});
-
-  const selectArchitectureIcons = (selectedArchitecture) => {
-    switch (selectedArchitecture) {
-      case "aws":
-        return awsIcons;
-      case "azure":
-        return azureIcons;
-      default:
-        return awsIcons;
-    }
-  };
 
   const toggleCategory = (category) => {
     setExpandedCategories(prev => ({
@@ -23,7 +11,7 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
     }));
   };
 
-  const iconsSource = selectArchitectureIcons(selectedArchitecture);
+  const iconsSource = languageIcons;
 
   return (
     <>

@@ -38,10 +38,6 @@ const ElementsSideBar = () => {
         <aside className={`font-bold text-lg bg-gray-300 h-full shrink-0 flex flex-col items-center overflow-x-hidden overflow-y-visible transition-all duration-500 ease-out ${isOpen ? "w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] p-4" : "w-0"}`}>
             {showContent && isOpen && (
                 <>
-                    <div className='flex flex-col gap-6 mb-6 m-3 opacity-0 animate-fadeIn relative z-50'>
-                        <h3>Arquitetura</h3>
-                        <SelectArchitecture selectedArchitecture={selectedArchitecture} setSelectedArchitecture={setSelectedArchitecture} />
-                    </div>
                     <div className="flex flex-col justify-start items-start mb-8 ml-5 gap-2 opacity-0 animate-fadeIn w-full relative z-40">
                             <button onClick={() => saveFlowData(id, toObject, diagramName)} className='flex justify-center items-center w-[70%] h-auto rounded-xl bg-green-700
                             border-2 border-green-700 text-white font-bold py-2 px-3 cursor-pointer text-sm xl:text-lg gap-2

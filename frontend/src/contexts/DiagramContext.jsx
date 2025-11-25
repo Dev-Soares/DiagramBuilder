@@ -3,8 +3,7 @@ import { useState, useMemo, useCallback, useRef } from 'react';
 import { addEdge } from '@xyflow/react';
 import { useNodesState, useEdgesState } from '@xyflow/react';
 import CustomNode from '../components/diagramComponents/CustomNode';
-import awsIcons from '../icons/awsIcons.js';
-import azureIcons from '../icons/azureIcons.js';
+import languageIcons from '../icons/languageIcons.js';
 
 const DiagramContext = createContext();
 
@@ -32,11 +31,7 @@ export const DiagramProvider = ({ children }) => {
 
     const fetchIconComponent = (label) => { //Funcão para encontrar o componente do ícone com base no id
 
-        for (const group of awsIcons) {
-            const found = group.icons.find(i => i.label === label);
-            if (found) return found.component || null;
-        }
-        for (const group of azureIcons) {
+        for (const group of languageIcons) {
             const found = group.icons.find(i => i.label === label);
             if (found) return found.component || null;
         }

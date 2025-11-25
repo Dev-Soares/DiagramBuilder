@@ -19,21 +19,41 @@ const CustomNode = ({id, data, isConnectable}) => {
     
 
   return (
-    <div className='p-4  rounded-xl shadow-md flex flex-col items-center gap-2 min-w-40 border-2 border-gray-200'
-        style={{ backgroundColor: color  }}>
-        <Handle type="target" position={Position.Top} isConnectable={isConnectable} />
+    <div className='relative p-4 rounded-xl shadow-lg flex flex-col items-center gap-3 min-w-44 bg-gray-800 border-2 border-gray-600 hover:border-blue-400 transition-all duration-300 hover:shadow-xl'>
+        <Handle 
+          type="target" 
+          position={Position.Top} 
+          isConnectable={isConnectable}
+          className="w-3! h-3! bg-blue-500! border-2! border-white!"
+        />
+        
         <button
-        className='absolute top-0 right-0 self-end bg-red-600 text-white flex justify-center items-center rounded-full h-6 w-6 hover:text-red-600 border-2 border-red-600 hover:bg-white transition-colors duration-800 p-3 cursor-pointer'
-        onClick={(e) => handleDelete(e, id)}
-        title="Deletar"
-        style={{ zIndex: 10 }}
-      ><span className="material-symbols-outlined">close</span></button>
-        <div className='h-18 w-18 flex items-center justify-center'>
-            {IconComponent && <IconComponent className="h-18 w-18 text-gray-500" />}
+          className='absolute -top-2 -right-2 bg-red-500 text-white flex justify-center items-center rounded-full h-6 w-6 hover:bg-red-600 transition-colors duration-200 z-10 shadow-md'
+          onClick={(e) => handleDelete(e, id)}
+          title="Deletar"
+        >
+          <span className="material-symbols-outlined text-sm">close</span>
+        </button>
+        
+        <div className='h-12 w-12 flex items-center justify-center mt-2 bg-gray-700 rounded-lg'>
+            {IconComponent && (
+              <IconComponent 
+                className="h-8 w-8" 
+                style={{ color: '#ffffff' }}
+              />
+            )}
         </div>
         
-        <Handle type="source" position={Position.Bottom} isConnectable={isConnectable} />
-        <div className={`font-semibold text-center text-md ${color !== '#FFFFFF' ? 'text-white' : 'text-black'}`}>{label}</div>
+        <Handle 
+          type="source" 
+          position={Position.Bottom} 
+          isConnectable={isConnectable}
+          className="w-3! h-3! bg-blue-500! border-2! border-white!"
+        />
+        
+        <div className="font-medium text-center text-sm text-white px-2 leading-tight">
+          {label}
+        </div>
     </div>
   )
 }

@@ -1,12 +1,12 @@
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback } from 'react';
 import { ReactFlow, Background, Controls, useReactFlow } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import '../../assets/reactflow.css';
 import idGenerator from '../../utils/idGenerator.js';
 import { useDiagram } from '../../contexts/DiagramContext.jsx';
 import { useDiagramActions } from '../../hooks/useDiagramActions.js';
-import awsIcons from '../../icons/awsIcons.js';
-import azureIcons from '../../icons/azureIcons.js';
+import languageIcons from '../../icons/languageIcons.js';
+
 
 
 
@@ -30,15 +30,12 @@ const DiagramFlowSection = ({ id }) => {
     const userId = id;
 
     const findIconComponent = (label) => {
-
-        for (const group of awsIcons) {
+        // Buscar nos ícones de linguagens
+        for (const group of languageIcons) {
             const found = group.icons.find(i => i.label === label);
             if (found) return found.component || null;
         }
-        for (const group of azureIcons) {
-            const found = group.icons.find(i => i.label === label);
-            if (found) return found.component || null;
-        }
+        
         return null;
     };
 
@@ -124,7 +121,7 @@ const DiagramFlowSection = ({ id }) => {
     );
 
     return (
-        <section className='h-[90vh] w-screen relative flex-1' ref={reactFlowRef}>
+        <section className='h-[90vh] w-screen relative flex-1 bg-gray-900' ref={reactFlowRef}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -137,7 +134,7 @@ const DiagramFlowSection = ({ id }) => {
                 defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
 
             >
-                <Background />
+                <Background color="#374151" />
                 <Controls />
 
             </ReactFlow>
