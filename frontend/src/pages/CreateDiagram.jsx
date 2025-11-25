@@ -1,0 +1,86 @@
+import { useNavigate } from "react-router-dom"
+import { useAuth } from "../contexts/AuthContext.jsx"
+import { useAlert } from "../contexts/AlertContext.jsx"
+import { useDiagramActions } from "../hooks/useDiagramActions.js"
+import Navbar from "../components/smallComponents/Navbar.jsx"
+import { useState } from "react"
+
+const CreateDiagram = () => {
+
+    const navigate = useNavigate()
+    const { createToken } = useAuth()
+    const { createNewDiagram } = useDiagramActions()
+    const { errorAlert } = useAlert()
+
+    const [diagramName, setDiagramName] = useState('')
+
+    const handleCreateDiagram = async (e) => {
+        e.preventDefault();
+
+        try {
+            const diagram = await createNewDiagram(diagramName);
+            console.log('Diagram created:', diagram.data);
+            const newToken = await createToken(diagram.data.id);
+
+            if (newToken) {
+                navigate(`/diagram/${diagram.data.id}`);
+            } else {
+                throw new Error('Token generation failed');
+            }
+        } catch (error) {
+            console.error('Error generating access link:', error);
+            errorAlert('Erro ao gerar o link de acesso. Tente novamente.');
+        };
+
+    }
+
+    return (
+        <>
+            <main className='flex flex-col justify-center items-center min-h-screen w-full p-4 sm:p-6 md:p-8 bg-gray-900'>
+                <Navbar />
+                <form onSubmit={handleCreateDiagram} className='flex flex-col justify-center items-center max-w-full gap-8 sm:gap-12 bg-white p-8 rounded-xl shadow-lg mt-16 select-none w-[85%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] pt-15'>
+                    <div className="text-center space-y-3 border-b border-blue-600 pb-6 w-full">
+                        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-800 to-blue-500 bg-clip-text text-transparent">
+                            Project Builder
+                        </h3>
+                        <p className="text-gray-600 text-base md:text-lg font-medium">
+                            Crie seu Novo Projeto
+                        </p>
+
+                    </div>
+                    <div className="w-full h-auto flex flex-col gap-4">
+                        <label htmlFor="diagramName"
+                            className="text-lg text-black self-start font-semibold"
+                        >Nome do Diagrama</label>
+                        <input
+                            id="diagramName"
+                            type="text"
+                            value={diagramName}
+                            onChange={(e) => setDiagramName(e.target.value)}
+                            placeholder="Ex: Arquitetura do Sistema, Fluxo de Login..."
+                            className="w-full px-4 py-3 bg-gray-300 rounded-lg focus:border-blue-500 focus:bg-gray-400 transition-colors "
+                            maxLength={30}
+                            required
+                        />
+                        <p className="text-yellow-600 text-sm lg:text-lg flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-yellow-500 lg:text-4xl!">info</span>
+                            Ele será salvo no ID de Sessão
+                        </p>
+                    </div>
+                    <div className="w-auto justify-center items-center flex flex-col gap-4">
+                        <button type="submit" className="bg-gradient-to-br from-blue-600 to bg-blue-950 text-white font-bold p-3 px-6 rounded-xl md:text-lg lg:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-105 transition-transform duration-500 border-none" >
+                        <span className="material-symbols-outlined"> add_circle </span> Criar Projeto
+                    </button>
+                        <button>
+                        Já possui um projeto? <span onClick={() => navigate('/get-diagram')} className="text-blue-600 font-bold cursor-pointer hover:underline">Acesse aqui</span>
+                    </button>
+                    </div>
+                    
+                    
+                </form>
+            </main>
+        </>
+    )
+}
+
+export default CreateDiagram

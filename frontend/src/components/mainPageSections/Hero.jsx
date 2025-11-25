@@ -13,7 +13,7 @@ const navigate = useNavigate()
           <h3 className="text-lg lg:text-xl xl:text-2xl font-normal text-gray-300">Construa sua Infraestrutura a partir de um diagrama visual. Sem cadastro, sem complicação.</h3>
         </div>
           
-          <button onClick={() => navigate('/architecture')} className="w-[85%] lg:w-[70%] 2xl:w-[50%]  bg-gradient-to-br from-blue-600 to bg-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-105 transition-transform duration-500 border-none" > <span className="material-symbols-outlined"> code </span> Modele Seu Projeto</button>
+          <button onClick={() => navigate('/create-diagram')} className="w-[85%] lg:w-[70%] 2xl:w-[50%]  bg-gradient-to-br from-blue-600 to bg-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-105 transition-transform duration-500 border-none" > <span className="material-symbols-outlined"> code </span> Modele Seu Projeto</button>
        </div>
        <div className="w-full h-auto flex justify-center items-center mt-20">
         <DiagramExample />

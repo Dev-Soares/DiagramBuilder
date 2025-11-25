@@ -18,7 +18,7 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
       {iconsSource.map((group) => (
         <div key={group.category} className="mb-4">
           <div 
-            className="flex items-center justify-between cursor-pointer p-2 rounded hover:bg-gray-600 transition-colors duration-300"
+            className="flex items-center justify-between cursor-pointer p-2 rounded hover:bg-gray-500 transition-colors duration-300"
             onClick={() => toggleCategory(group.category)}
           >
             <h3 className='text-sm lg:text-lg font-semibold text-white'>{group.category}</h3>

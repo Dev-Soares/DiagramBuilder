@@ -13,7 +13,7 @@ const TokenExpiredPage = () => {
           <h3 className="text-md md:text-lg lg:text-xl text-blue-700 font-semibold">Clique abaixo para iniciar uma nova!</h3>
         </div>
 
-          <button onClick={() => navigate('/architecture')} className="w-[85%] lg:w-[70%] 2xl:w-[50%]  bg-gradient-to-br from-blue-600 to-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-[1.02]  transform transition-all duration-400 " >  Iniciar nova sessão <span className="material-symbols-outlined"> arrow_forward </span></button>
+          <button onClick={() => navigate('/create-diagram')} className="w-[85%] lg:w-[70%] 2xl:w-[50%]  bg-gradient-to-br from-blue-600 to-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-[1.02]  transform transition-all duration-400 " >  Iniciar nova sessão <span className="material-symbols-outlined"> arrow_forward </span></button>
        </div>
     </main>
   )

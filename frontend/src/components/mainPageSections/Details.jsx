@@ -11,7 +11,7 @@ const Details = () => {
             <DetailCard cardIcon='code' cardTitle='Modelagem Visual' cardText='Crie sua infraestrutura arrastando e soltando componentes em um canvas intuitivo.'/>
             <DetailCard cardIcon='bolt' cardTitle='Geração Instantânea' cardText='Monte seus diagramas com alguns cliques.'/>
             <DetailCard cardIcon='cloud' cardTitle='Flexibilidade' cardText='Escolha seu provedor de acordo com as necessidades de sua infraestrutura'/>
-            <DetailCard cardIcon='deployed_code' cardTitle='Modelagem Visual' cardText='Crie sua infraestrutura arrastando e soltando componentes em um canvas intuitivo.'/>
+            <DetailCard cardIcon='save' cardTitle='Salvamento Seguro' cardText='Seus diagramas são salvos de através de um ID de sessão'/>
         </div>
         
     </section>

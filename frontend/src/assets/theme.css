@@ -18,6 +18,10 @@ body {
     border: 0.1px solid #bbb;
   }
 
+  .nav-diagram-border {
+    border-bottom: 0.1px solid #111111;
+  }
+
   .no-select {
     /* Propriedade padrão (moderna) */
     user-select: none;

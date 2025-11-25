@@ -3,13 +3,14 @@ import { createRoot } from 'react-dom/client'
 import "./assets/theme.css"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainPage from './pages/MainPage'
-import ArchitecturePage from './pages/ArchitecturePage'
+import CreateDiagram from './pages/CreateDiagram'
 import DiagramArea from './pages/DiagramArea'
 import { DiagramProvider } from './contexts/DiagramContext.jsx'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import { AlertProvider } from './contexts/AlertContext.jsx'
 import axios from 'axios'
 import TokenExpiredPage from './pages/TokenExpiredPage.jsx';
+import GetDiagram from './pages/GetDiagram.jsx';
 
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL
@@ -29,9 +30,9 @@ createRoot(document.getElementById('root')).render(
         />
         
           <Route
-            path='/architecture'
+            path='/create-diagram'
             element={
-              <ArchitecturePage />
+              <CreateDiagram />
             }
           />
           <Route
@@ -44,6 +45,12 @@ createRoot(document.getElementById('root')).render(
             path='/token-expired'
             element={
                 <TokenExpiredPage />
+            }
+          />
+          <Route
+            path='/get-diagram'
+            element={
+                <GetDiagram />
             }
           />
         

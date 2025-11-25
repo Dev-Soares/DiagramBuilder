@@ -11,7 +11,7 @@ const Navbar = () => {
   const { scrollToSection } = useScrollTo(); 
 
   return (
-    <nav className='absolute top-0 left-0 w-full bg-linear-to-br from-blue-950 to-blue-800 shadow-lg z-50'>
+    <nav className='absolute top-0 left-0 w-full bg-linear-to-br from-blue-950 to-blue-800 shadow-lg z-50 select-none'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}

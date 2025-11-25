@@ -17,9 +17,6 @@ const DiagramContent = () => {
   return (
 
     <>
-
-    
-
     <main className='w-full h-screen overflow-hidden select-none'>
 
       <DiagramHeader />

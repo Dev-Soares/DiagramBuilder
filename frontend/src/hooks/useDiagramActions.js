@@ -21,7 +21,7 @@ export const useDiagramActions = () => {
 
 
 
-    const createNewDiagram = async () => {
+    const createNewDiagram = async (diagramName) => {
 
         const diagramData = {
             flowData: {
@@ -33,7 +33,7 @@ export const useDiagramActions = () => {
                     zoom: 1
                 },
 
-                diagramName: 'Untitled-Diagram'
+                diagramName: diagramName
             }
 
         }

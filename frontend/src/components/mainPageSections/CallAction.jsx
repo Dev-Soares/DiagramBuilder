@@ -13,7 +13,7 @@ const CallAction = () => {
           <h3 className="text-lg lg:text-xl xl:text-2xl font-normal text-gray-300">Junte-se a milhares de desenvolvedores que já simplificaram seu <span className="font-black text-blue-400" > workflow</span>.</h3>
         </div>
           
-          <button onClick={() => navigate('/architecture')} className="w-[65%] lg:w-[50%] 2xl:w-[30%]  bg-gradient-to-br from-blue-600 to bg-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-105 transition-transform duration-500 border-none" > Teste Agora</button>
+          <button onClick={() => navigate('/create-diagram')} className="w-[65%] lg:w-[50%] 2xl:w-[30%]  bg-gradient-to-br from-blue-600 to bg-blue-950 text-white font-bold p-3 px-4  rounded-4xl md:text-lg xl:text-xl flex justify-center items-center gap-4 cursor-pointer hover:translate-y-[-2px] hover:scale-105 transition-transform duration-500 border-none" > Teste Agora</button>
        </div>
        <div>
         <img src="Up.svg" alt="Svg Ilustrativo" />

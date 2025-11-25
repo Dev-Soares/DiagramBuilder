@@ -34,7 +34,7 @@ const Footer = () => {
                         Início
                     </button>
                     <button 
-                        onClick={() => navigate('/architecture')} 
+                        onClick={() => navigate('/create-diagram')} 
                         className='text-gray-300 hover:text-white text-left transition-colors'
                     >
                         Criar Diagrama

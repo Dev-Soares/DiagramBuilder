@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const DiagramHeader = () => {
 
-    const { diagramName, setIsOpen, isOpen, setDiagramName } = useDiagram();
+    const { diagramName, setIsOpen, isOpen } = useDiagram();
 
     const navigate = useNavigate();
 
@@ -12,9 +12,9 @@ const DiagramHeader = () => {
     }
 
     return (
-        <header className='h-[10%] w-full bg-gray-800 flex items-center justify-between p-6 px-12 nav-diagram-border select-none border-b border-gray-700'>
+        <header className='h-[10%] w-full bg-gray-700 flex items-center justify-between p-6 px-12 nav-diagram-border select-none'>
             <button onClick={ () => setIsOpen(!isOpen)} >
-                <span className='material-symbols-outlined cursor-pointer text-4xl text-white hover:text-gray-300 transition-colors'>{isOpen ? 'close' : 'menu'}</span>
+                <span className='material-symbols-outlined cursor-pointer text-4xl! text-white hover:text-gray-300 transition-colors'>{isOpen ? 'close' : 'menu'}</span>
             </button>
             <div className="flex flex-row gap-2 items-center">
                 <h2 className='text-lg xl:text-2xl font-bold p-2 focus:outline-none text-white transition-colors' 
