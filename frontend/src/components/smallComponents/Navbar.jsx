@@ -1,6 +1,5 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useScrollTo } from '../../hooks/useScrollTo';
 
 const Navbar = () => {
   
@@ -8,13 +7,11 @@ const Navbar = () => {
   
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { scrollToSection } = useScrollTo(); 
-
   return (
     <nav className='absolute top-0 left-0 w-full bg-linear-to-br from-blue-950 to-blue-800 shadow-lg z-50 select-none'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2'>
         <div className='flex justify-between items-center h-16'>
-          {/* Logo */}
+           
           <div 
             onClick={() => navigate('/')} 
             className='flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity'
@@ -23,29 +20,29 @@ const Navbar = () => {
             <span className='text-xl font-bold text-white'>ProjectBuilder</span>
           </div>
 
-          {/* Desktop Menu */}
+           
           <div className='hidden md:flex items-center gap-8'>
             <button 
-              onClick={() => navigate('/')} 
+              onClick={() => navigate('/create-diagram')} 
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
-              Início
+              Criar Projeto
             </button>
-            <button 
-              onClick={() => scrollToSection('details')} // Aqui você chama a função
+            <a 
+              href='#details'  
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
               Recursos
-            </button>
-            <button 
-              onClick={() => scrollToSection('guide')} // Aqui você chama a função
+            </a>
+            <a 
+              href='#guide'  
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
               Como Funciona
-            </button>
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
+              
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className='md:hidden text-white p-2'
@@ -56,36 +53,32 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        
         {isMenuOpen && (
           <div className='md:hidden pb-4 flex flex-col gap-4 border-t border-blue-700 pt-4'>
             <button 
               onClick={() => {
-                navigate('/');
+                navigate('/create-diagram');
                 setIsMenuOpen(false);
               }} 
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] text-left'
             >
-              Início
+              Criar Projeto
             </button>
-            <button 
-              onClick={() => {
-                scrollToSection('details'); // Aqui você chama a função
-                setIsMenuOpen(false);
-              }}
+            <a 
+              href='#details'
+              onClick={() => setIsMenuOpen(false)}
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] text-left cursor-pointer'
             >
               Recursos
-            </button>
-            <button 
-              onClick={() => {
-                scrollToSection('guide'); // Aqui você chama a função
-                setIsMenuOpen(false);
-              }}
+            </a>
+            <a 
+              href='#guide'
+              onClick={() => setIsMenuOpen(false)}
               className='text-gray-200 hover:text-blue-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] text-left cursor-pointer'
             >
               Como Funciona
-            </button>
+            </a>
           </div>
         )}
       </div>

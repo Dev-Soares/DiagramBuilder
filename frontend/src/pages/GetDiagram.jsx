@@ -1,8 +1,9 @@
-
+import { useState } from 'react'
+import Navbar from '../components/smallComponents/Navbar.jsx';
 
 const GetDiagram = () => {
 
-    const [projectName, setProjectName] = useState('')
+    const [projectId, setProjectId] = useState('')
 
     return (
         <>
