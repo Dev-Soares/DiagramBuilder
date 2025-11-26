@@ -43,7 +43,7 @@ const ElementsSideBar = () => {
                             type="text"
                             value={diagramName}
                             onChange={(e) => setDiagramName(e.target.value)}
-                            className="w-[85%] px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-gray-600 transition-colors text-sm lg:text-lg font-normal placeholder-gray-400"
+                            className="w-[85%] px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-purple-500 focus:bg-gray-600 transition-colors text-sm lg:text-lg font-normal placeholder-gray-400"
                             placeholder="Digite o nome do diagrama..."
                         />
                     </div>

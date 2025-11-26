@@ -101,10 +101,6 @@ const DiagramExample = () => {
         [setEdges]
     );
 
-    const onNodeClick = useCallback((event, node) => {
-        console.log('Node clicked:', node);
-    }, []);
-
     return (
         <div className="w-full h-120 md:w-[50%] lg:w-full xl:w-[70%] 2xl:w-[50%] rounded-lg overflow-hidden border-2 border-gray-200 shadow-lg bg-neutral-50">
             <ReactFlow
@@ -114,7 +110,6 @@ const DiagramExample = () => {
                 onNodesChange={onNodesChange}
                 onEdgesChange={onEdgesChange}
                 onConnect={onConnect}
-                onNodeClick={onNodeClick}
                 fitView
                 fitViewOptions={{
                     padding: 0.2,

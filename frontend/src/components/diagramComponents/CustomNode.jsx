@@ -19,23 +19,23 @@ const CustomNode = ({id, data, isConnectable}) => {
     
 
   return (
-    <div className='relative p-4 rounded-xl shadow-lg flex flex-col items-center gap-3 min-w-44 bg-gray-600 border-2 border-gray-600 hover:border-blue-600 transition-all duration-300 hover:shadow-xl'>
+    <div className='relative p-3 rounded-xl shadow flex flex-col items-center gap-4 min-w-40 bg-gray-200 border border-gray-300 hover:border-purple-600 transition-colors duration-150 hover:shadow-lg py-5'>
         <Handle 
           type="target" 
           position={Position.Top} 
           isConnectable={isConnectable}
-          className="w-3! h-3! bg-blue-500! border-2! border-white!"
+          className="w-4 h-4 border-none bg-purple-700"
         />
         
         <button
-          className='absolute -top-2 -right-2 bg-red-500 text-white flex justify-center items-center rounded-full h-8 w-8 hover:bg-white hover:text-red-600 transition-colors cursor-pointer duration-500 z-10 shadow-md'
+          className='absolute -top-2 -right-2 bg-red-500 text-white flex justify-center items-center rounded-full h-7 w-7 hover:bg-white hover:text-red-600 transition-colors cursor-pointer duration-150 z-10 shadow'
           onClick={(e) => handleDelete(e, id)}
           title="Deletar"
         >
           <span className="material-symbols-outlined text-sm">close</span>
         </button>
         
-        <div className='h-12 w-12 flex items-center justify-center mt-2 bg-gray-600 rounded-lg'>
+        <div className='h-16 w-16 flex items-center justify-center mt-2 rounded-lg'>
             {IconComponent && (
               <IconComponent 
                 className="h-16 w-16"
@@ -48,10 +48,10 @@ const CustomNode = ({id, data, isConnectable}) => {
           type="source" 
           position={Position.Bottom} 
           isConnectable={isConnectable}
-          className="w-3! h-3! bg-blue-500! border-2! border-white!"
+          className="w-4 h-4 border-none bg-purple-700"
         />
         
-        <div className="font-semibold text-center text-sm lg:text-lg text-white px-2 leading-tight">
+        <div className="font-semibold text-center text-md lg:text-lg px-2 leading-tight">
           {label}
         </div>
     </div>

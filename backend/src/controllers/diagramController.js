@@ -20,7 +20,9 @@ const diagramController = {
   },
 
   getDiagramById: async (req, res) => {
+    
     const { id } = req.params;
+
     try {
       const diagram = await diagramService.getDiagramById(id);
       if (diagram) {

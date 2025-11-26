@@ -131,7 +131,7 @@ const DiagramFlowSection = ({ id }) => {
                 onConnect={onConnect}
                 onDragOver={onDragOver}
                 onDrop={onDrop}
-                defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
+                defaultViewport={{ x: 0, y: 0, zoom: 0.75 }}
 
             >
                 <Background

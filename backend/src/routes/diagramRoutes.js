@@ -11,10 +11,12 @@ diagramRoutes.post("/generate-token/:id", handleTokenGeneration);
 
 diagramRoutes.post("/create-diagram", diagramController.createDiagram);
 
-diagramRoutes.get("/:id", verifyLinkAcess, diagramController.getDiagramById);
+diagramRoutes.get("/:id", diagramController.getDiagramById);
 
-diagramRoutes.delete("/delete-diagram/:id", verifyLinkAcess, diagramController.deleteDiagram);
+diagramRoutes.delete("/delete-diagram/:id", diagramController.deleteDiagram);
 
-diagramRoutes.put("/save-diagram/:id", verifyLinkAcess, diagramController.updateDiagram);
+diagramRoutes.put("/save-diagram/:id",  diagramController.updateDiagram);
+
+diagramRoutes.get
 
 export default diagramRoutes;
