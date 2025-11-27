@@ -1,12 +1,42 @@
 import { createContext, useContext } from "react";
+import { useState, useEffect, useRef } from 'react';
 import toast from "react-hot-toast";
 import { Toaster } from 'react-hot-toast'
 import SuccessAlert from "../components/smallComponents/customAlerts/SuccessAlert.jsx";
 import ErrorAlert from "../components/smallComponents/customAlerts/ErrorAlert.jsx";
+import LoadingAlert from "../components/smallComponents/customAlerts/LoadingAlert.jsx";
 
 const AlertContext = createContext();
 
 export const AlertProvider = ({children}) => {
+
+    const [ isLoading, setIsLoading ] = useState(false);
+
+    const loadingToastId = useRef(null);
+
+    const loadingAlert = () => {
+        toast.custom((t) => (
+        <LoadingAlert t={t} />
+       ), {
+        duration: 4000,
+        position: 'top-right',
+       });
+    }
+
+    useEffect(() => {
+        if (isLoading && !loadingToastId.current) {
+            loadingToastId.current = toast.custom((t) => (
+                <LoadingAlert t={t} />
+            ), {
+                duration: Infinity,
+                position: 'top-right',
+                id: 'loading-toast'
+            });
+        } else if (!isLoading && loadingToastId.current) {
+            toast.dismiss(loadingToastId.current);
+            loadingToastId.current = null;
+        }
+    }, [isLoading]);
 
     const successAlert = (message) => {
         toast.custom((t) => (
@@ -26,7 +56,7 @@ export const AlertProvider = ({children}) => {
         });
     }
 
-    const contextValue = { successAlert, errorAlert };
+    const contextValue = { successAlert, errorAlert, loadingAlert, isLoading, setIsLoading };
 
     return (
         <AlertContext.Provider value={contextValue}>

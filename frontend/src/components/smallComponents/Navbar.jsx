@@ -23,25 +23,19 @@ const Navbar = () => {
            
           <div className='hidden md:flex items-center gap-8'>
             <button 
-              onClick={() => navigate('/get-diagram')} 
+              onClick={() => navigate('/create-diagram')} 
               className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
               Criar Projeto
             </button>
             <button 
-              onClick={() => navigate('/create-diagram')} 
+              onClick={() => navigate('/get-diagram')} 
               className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
               Acessar Projeto
             </button>
             <a 
-              href='#details'  
-              className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
-            >
-              Recursos
-            </a>
-            <a 
-              href='#guide'  
+              href='/#details'  
               className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] cursor-pointer'
             >
               Como Funciona
@@ -81,14 +75,7 @@ const Navbar = () => {
               Acessar Projeto
             </button>
             <a 
-              href='#details'
-              onClick={() => setIsMenuOpen(false)}
-              className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] text-left cursor-pointer'
-            >
-              Recursos
-            </a>
-            <a 
-              href='#guide'
+              href='/#guide'
               onClick={() => setIsMenuOpen(false)}
               className='text-gray-200 hover:text-purple-700 transition-all font-medium hover:bg-white p-2 rounded-xl duration-600 hover:translate-y-[-2px] text-left cursor-pointer'
             >

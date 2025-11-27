@@ -25,6 +25,7 @@ import {
   SiAngular,
   SiSvelte,
   SiSolid,
+  SiTailwindcss,
   SiNextdotjs,
   SiNuxtdotjs,
   SiGatsby,
@@ -77,6 +78,7 @@ import { FaJava, FaServer, FaDatabase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 
 const languageIcons = [
+  // Always keep Main Stacks first
   {
     category: "Main Stacks",
     icons: [
@@ -99,24 +101,11 @@ const languageIcons = [
     ],
   },
   {
-    category: "Modern Languages",
-    icons: [
-      { component: SiRust, id: "rust", label: "Rust", type: "CustomNode", color: "#000000" },
-      { component: SiSwift, id: "swift", label: "Swift", type: "CustomNode", color: "#FA7343" },
-      { component: SiKotlin, id: "kotlin", label: "Kotlin", type: "CustomNode", color: "#7F52FF" },
-    ],
-  },
-  {
-    category: "Scripting & Shell",
-    icons: [
-      { component: SiLua, id: "lua", label: "Lua", type: "CustomNode", color: "#2C2D72" },
-    ],
-  },
-  {
     category: "Web Frontend",
     icons: [
       { component: SiHtml5, id: "html5", label: "HTML5", type: "CustomNode", color: "#E34F26" },
       { component: SiCss3, id: "css3", label: "CSS3", type: "CustomNode", color: "#1572B6" },
+      { component: SiTailwindcss, id: "tailwind", label: "Tailwind CSS", type: "CustomNode", color: "#38BDF8" },
       { component: SiReact, id: "react", label: "React", type: "CustomNode", color: "#61DAFB" },
       { component: SiVuedotjs, id: "vue", label: "Vue.js", type: "CustomNode", color: "#4FC08D" },
       { component: SiAngular, id: "angular", label: "Angular", type: "CustomNode", color: "#DD0031" },
@@ -125,14 +114,6 @@ const languageIcons = [
       { component: SiNextdotjs, id: "nextjs", label: "Next.js", type: "CustomNode", color: "#000000" },
       { component: SiNuxtdotjs, id: "nuxtjs", label: "Nuxt.js", type: "CustomNode", color: "#00DC82" },
       { component: SiGatsby, id: "gatsby", label: "Gatsby", type: "CustomNode", color: "#663399" },
-    ],
-  },
-  {
-    category: "CSS Preprocessors",
-    icons: [
-      { component: SiSass, id: "sass", label: "Sass", type: "CustomNode", color: "#CC6699" },
-      { component: SiLess, id: "less", label: "Less", type: "CustomNode", color: "#1D365D" },
-      { component: SiStylus, id: "stylus", label: "Stylus", type: "CustomNode", color: "#FF6347" },
     ],
   },
   {
@@ -158,6 +139,28 @@ const languageIcons = [
       { component: SiMongodb, id: "mongodb", label: "MongoDB", type: "CustomNode", color: "#47A248" },
       { component: SiRedis, id: "redis", label: "Redis", type: "CustomNode", color: "#DC382D" },
       { component: SiSqlite, id: "sqlite", label: "SQLite", type: "CustomNode", color: "#003B57" },
+    ],
+  },
+  {
+    category: "Modern Languages",
+    icons: [
+      { component: SiRust, id: "rust", label: "Rust", type: "CustomNode", color: "#000000" },
+      { component: SiSwift, id: "swift", label: "Swift", type: "CustomNode", color: "#FA7343" },
+      { component: SiKotlin, id: "kotlin", label: "Kotlin", type: "CustomNode", color: "#7F52FF" },
+    ],
+  },
+  {
+    category: "Scripting & Shell",
+    icons: [
+      { component: SiLua, id: "lua", label: "Lua", type: "CustomNode", color: "#2C2D72" },
+    ],
+  },
+  {
+    category: "CSS Preprocessors",
+    icons: [
+      { component: SiSass, id: "sass", label: "Sass", type: "CustomNode", color: "#CC6699" },
+      { component: SiLess, id: "less", label: "Less", type: "CustomNode", color: "#1D365D" },
+      { component: SiStylus, id: "stylus", label: "Stylus", type: "CustomNode", color: "#FF6347" },
     ],
   },
   {

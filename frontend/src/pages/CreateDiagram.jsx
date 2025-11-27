@@ -8,12 +8,14 @@ const CreateDiagram = () => {
 
     const navigate = useNavigate()
     const { createNewDiagram } = useDiagramActions()
-    const { errorAlert } = useAlert()
+    const { errorAlert, setIsLoading } = useAlert()
 
     const [diagramName, setDiagramName] = useState('')
 
     const handleCreateDiagram = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        
 
         try {
             const diagram = await createNewDiagram(diagramName);
@@ -24,7 +26,9 @@ const CreateDiagram = () => {
             }
         } catch (error) {
             errorAlert('Erro ao gerar o link de acesso. Tente novamente.');
-        };
+        } finally {
+            setIsLoading(false);
+        }
 
     }
 
@@ -34,7 +38,7 @@ const CreateDiagram = () => {
                 <Navbar />
                 <form onSubmit={handleCreateDiagram} className='flex flex-col justify-center items-center max-w-full gap-8 sm:gap-12 bg-white p-8 rounded-xl shadow-lg mt-16 select-none w-[85%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] pt-15'>
                     <div className="text-center space-y-3 border-b border-purple-600 pb-6 w-full">
-                        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text text-transparent">
+                        <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text text-transparent leading-normal">
                             Project Builder
                         </h3>
                         <p className="text-gray-600 text-base md:text-lg font-medium">

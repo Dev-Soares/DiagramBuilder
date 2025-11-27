@@ -1,20 +1,14 @@
-import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import { useAlert } from "../contexts/AlertContext";
 
 export const useDiagramActions = () => {
-  const { successAlert, errorAlert } = useAlert();
-
-  const navigate = useNavigate();
-
-  const handleExpiredToken = (error) => {
-    if (error.response?.data?.code === "TOKEN_EXPIRED") {
-      return navigate("/token-expired");
-    }
-    return false;
-  };
+  const { successAlert, errorAlert, setIsLoading } = useAlert();
 
   const createNewDiagram = async (diagramName) => {
+
+    setIsLoading(true);
+    
     const diagramData = {
       flowData: {
         nodes: [],
@@ -31,34 +25,40 @@ export const useDiagramActions = () => {
 
     try {
       const response = await axios.post("/diagram/create-diagram", diagramData);
+      setIsLoading(false);
       successAlert("Diagrama criado com successo!");
       return response;
     } catch (error) {
-      console.error("Error creating diagram:", error);
+      setIsLoading(false);
+      errorAlert("Erro ao criar o diagrama. Tente novamente.");
     }
   };
 
   const fetchDiagram = async (diagramId) => {
+    setIsLoading(true);
+    
     try {
       const response = await axios.get(`/diagram/${diagramId}`);
+      setIsLoading(false);
       return response.data;
     } catch (error) {
-      console.error("Error fetching diagram:", error);
-      if (!handleExpiredToken(error)) {
-        errorAlert("Erro ao carregar o diagrama. Tente novamente.");
-      }
+      setIsLoading(false);
+      errorAlert("Erro ao carregar o diagrama. Tente novamente.");
+    
     }
   };
 
   const deleteDiagram = async (diagramId) => {
+    setIsLoading(true);
+    
     try {
       await axios.delete(`/diagram/delete-diagram/${diagramId}`);
+      setIsLoading(false);
       successAlert("Diagrama deletado com successo!");
     } catch (error) {
       console.error("Error deleting diagram:", error);
-      if (!handleExpiredToken(error)) {
-        errorAlert("Erro ao deletar o diagrama. Tente novamente.");
-      }
+      setIsLoading(false);
+      errorAlert("Erro ao deletar o diagrama. Tente novamente.");
     }
   };
 
@@ -88,15 +88,15 @@ export const useDiagramActions = () => {
 
   const saveFlowData = async (id, toObject, diagramName) => {
     const flowCode = formatDiagramToJSON(toObject, diagramName);
+    setIsLoading(true);
 
     try {
       await axios.put(`/diagram/save-diagram/${id}`, flowCode);
+      setIsLoading(false);
       successAlert("Diagrama salvo com successo!");
     } catch (error) {
-      console.error("Error saving diagram:", error);
-      if (!handleExpiredToken(error)) {
-        errorAlert("Erro ao salvar o diagrama. Tente novamente.");
-      }
+      setIsLoading(false);
+      errorAlert("Erro ao salvar o diagrama. Tente novamente.");  
     }
   };
 

@@ -10,18 +10,18 @@ const GetDiagram = () => {
 
     const { fetchDiagram } = useDiagramActions();
 
-    const { errorAlert } = useAlert();
+    const { errorAlert, setIsLoading  } = useAlert();
 
     const navigate = useNavigate();
 
     const handleGetDiagram = async (e) => {
 
         e.preventDefault();
+        setIsLoading(true);
 
         try {
-
             const diagram = await fetchDiagram(projectId);
-            const diagramId = diagram?.data?.id;
+            const diagramId = diagram.id;
 
             if (diagramId) {
                 navigate(`/diagram/${diagramId}`);
@@ -31,6 +31,8 @@ const GetDiagram = () => {
             
         } catch (error) {
             errorAlert('Erro ao carregar o diagrama. Tente novamente.');
+        } finally {
+            setIsLoading(false);
         }
 
     };
@@ -41,9 +43,9 @@ const GetDiagram = () => {
         <>
             <main className='flex flex-col justify-center items-center min-h-screen w-full p-4 sm:p-6 md:p-8 bg-gray-900'>
                 <Navbar />
-                <form onSubmit={handleGetDiagram} className='flex flex-col justify-center items-center max-w-full gap-8 sm:gap-12 bg-white p-8 rounded-xl shadow-lg mt-16 select-none w-[85%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] pt-15'>
+                <form onSubmit={(e) => handleGetDiagram(e)} className='flex flex-col justify-center items-center max-w-full gap-8 sm:gap-12 bg-white p-8 rounded-xl shadow-lg mt-16 select-none w-[85%] sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] pt-15'>
                     <div className="text-center space-y-3 border-b border-purple-600 pb-6 w-full">
-                        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text text-transparent">
+                        <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-800 to-purple-500 bg-clip-text text-transparent leading-normal">
                             Project Builder
                         </h3>
                         <p className="text-gray-600 text-base md:text-lg font-medium">
