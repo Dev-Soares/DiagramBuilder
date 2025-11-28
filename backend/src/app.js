@@ -34,7 +34,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 app.get("/", (_req, res) => {
-	res.json({ message: "Diagram-service Hello World!" });
+	res.json('API is Running');
 });
 
 
