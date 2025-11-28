@@ -1,7 +1,7 @@
 import { useState } from "react";
 import languageIcons from "../../icons/languageIcons";
 
-const ElementList = ({ onDragStart, selectedArchitecture }) => {
+const ElementList = ({ onDragStart, onTouchElement }) => {
   const [expandedCategories, setExpandedCategories] = useState({});
 
   const toggleCategory = (category) => {
@@ -35,7 +35,7 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
                   label,
                   type: "CustomNode",
                   color: color,
-                }
+                };
 
                 if (!IconComponent) {
                   console.warn(`Missing icon component for id=${id} label=${label} category=${group.category}`);
@@ -52,7 +52,10 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
                     key={id}
                     className='flex items-center cursor-grab select-none p-2 rounded transition-all duration-800 hover:translate-y-[-1px] w-fit hover:bg-gray-600'
                     draggable
-                    onDragStart={(e) => onDragStart(e, data)}
+                    onDragStart={(e) => onDragStart && onDragStart(e, data)}
+                    onTouchEnd={(e) => {
+                      if (onTouchElement) onTouchElement(e, data);
+                    }}
                     title={label}
                   >
                     <div className="h-10 w-10 flex items-center justify-center flex-shrink-0 mr-2">
@@ -73,4 +76,4 @@ const ElementList = ({ onDragStart, selectedArchitecture }) => {
   );
 };
 
-export default ElementList
+export default ElementList;

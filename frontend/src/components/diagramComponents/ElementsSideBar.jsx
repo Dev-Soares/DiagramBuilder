@@ -14,7 +14,7 @@ const ElementsSideBar = () => {
 
     const { id } = useParams();
 
-    const { toObject } = useReactFlow();
+    const { toObject, addNodes, screenToFlowPosition } = useReactFlow();
 
     const { saveFlowData } = useDiagramActions();
 
@@ -31,6 +31,27 @@ const ElementsSideBar = () => {
             successAlert('ID do diagrama copiado para a área de transferência!');
             setTextIsCopied(true);
             setTimeout(() => setTextIsCopied(false), 8000);
+        });
+    };
+
+    // Função para criar nó no diagrama ao tocar no elemento (mobile)
+    const onTouchElement = (event, el) => {
+        event.preventDefault();
+
+        const touch = event.changedTouches?.[0];
+        if (!touch) return;
+
+        
+        const position = screenToFlowPosition({
+            x: touch.clientX,
+            y: touch.clientY,
+        });
+        
+        addNodes({
+            id: `${el.id}-${Date.now()}`,
+            type: el.type,
+            position,
+            data: { label: el.label, color: el.color },
         });
     };
 
@@ -72,7 +93,7 @@ const ElementsSideBar = () => {
                     <div className='opacity-0 animate-fadeIn relative z-30'>
                         <h2 className='lg:text-lg xl:text-xl ml-9 md:ml-3 text-white self-start'>Elementos</h2>
                         <div className='flex flex-col flex-wrap gap-4 my-12 m-3 ml-2'>
-                            <ElementList onDragStart={onDragStart} />
+                            <ElementList onDragStart={onDragStart} onTouchElement={onTouchElement} />
                         </div>
                     </div>
                 </>
