@@ -50,7 +50,7 @@ const ElementList = ({ onDragStart }) => {
                 return (
                   <div
                     key={id}
-                    className='flex no-select items-center cursor-grab select-none p-2 rounded transition-all duration-800 hover:translate-y-[-1px] w-fit hover:bg-gray-600'
+                    className='flex  draggable-item items-center cursor-grab select-none p-2 rounded transition-all duration-800 hover:translate-y-[-1px] w-fit hover:bg-gray-600'
                     draggable={true}
                     onDragStart={(e) => onDragStart && onDragStart(e, data)}
                     title={label}
