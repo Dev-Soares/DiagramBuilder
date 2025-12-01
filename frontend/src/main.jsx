@@ -13,7 +13,7 @@ import { polyfill } from "mobile-drag-drop";
 import "mobile-drag-drop/default.css";
 
 polyfill({
-  dragImageCenterOnTouch: true, 
+  dragImageCenterOnTouch: true,   
   forceApply: false, 
 });
 

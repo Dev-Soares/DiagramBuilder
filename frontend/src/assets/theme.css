@@ -14,7 +14,7 @@ body {
 }
 
 .draggable-item {
-  touch-action: pan-y; /* Diz pro navegador: "não faça scroll aqui, deixa eu controlar" */
+  touch-action: none;
   -webkit-user-drag: element;
 }
 
