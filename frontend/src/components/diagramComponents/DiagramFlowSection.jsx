@@ -132,7 +132,8 @@ const DiagramFlowSection = ({ id }) => {
                 onDragOver={onDragOver}
                 onDrop={onDrop}
                 defaultViewport={{ x: 0, y: 0, zoom: 0.75 }}
-
+                translateExtent={[[-500, -500], [1500, 1300]]}
+                extent={[[-500, -500], [1500, 1300]]}
             >
                 <Background
                     
@@ -140,8 +141,6 @@ const DiagramFlowSection = ({ id }) => {
                     gap={20}
                     size={1}
                 />
-                <Controls />
-
             </ReactFlow>
         </section>
     )
