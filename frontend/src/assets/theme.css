@@ -165,3 +165,21 @@ body {
 .animate-custom-leave {
   animation: custom-leave 0.4s forwards cubic-bezier(0.06, 0.71, 0.55, 1);
 }
+
+@media (max-width: 600px) {
+  .introjs-tooltip {
+    font-size: 0.95rem !important;
+    padding: 0.9rem 1rem !important;
+    max-width: 96vw !important;
+    min-width: 60vw !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+  }
+  .introjs-tooltip-title {
+    font-size: 1.08rem !important;
+  }
+  .introjs-button {
+    font-size: 0.97rem !important;
+    padding: 0.45rem 1.1rem !important;
+  }
+}
