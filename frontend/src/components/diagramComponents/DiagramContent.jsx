@@ -17,7 +17,7 @@ const DiagramContent = () => {
   return (
 
     <>
-    <main className='w-full h-screen overflow-hidden select-none'>
+    <main className='w-full h-screen overflow-y-hidden overflow-x-hidden select-none'>
 
       <DiagramHeader />
       <section className='h-[90%] w-full flex justify-between bg-gray-100 relative overflow-hidden'>
