@@ -69,8 +69,9 @@ const ElementsSideBar = () => {
                                     </>)}</button>
 
                         </div>
-                        <TutorialButton />
                     </div>
+                    <TutorialButton />
+
 
                     <div id='element-list' className='opacity-0 animate-fadeIn relative z-30'>
                         <h2 className='lg:text-lg xl:text-xl ml-9 md:ml-3 text-white self-start'>Elementos</h2>
