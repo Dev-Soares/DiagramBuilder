@@ -42,7 +42,7 @@ export const AlertProvider = ({children}) => {
         toast.custom((t) => (
         <SuccessAlert t={t} message={message} />
        ), {
-        duration: 4000,
+        duration: 2000,
         position: 'top-right',
        });
     }
@@ -51,7 +51,7 @@ export const AlertProvider = ({children}) => {
         toast.custom((t) => (
             <ErrorAlert t={t} message={message} />
         ), {
-            duration: 4000,
+            duration: 2000,
             position: 'top-right',
         });
     }
