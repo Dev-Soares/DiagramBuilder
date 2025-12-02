@@ -62,7 +62,7 @@ const ElementList = ({ onDragStart }) => {
                 return (
                   <div
                     key={id}
-                    className={`flex draggable-item items-center cursor-grab select-none p-2 rounded transition-all duration-800 hover:translate-y-[-1px] w-fit hover:bg-gray-600 ${isMobile && selectedElement?.id === id ? 'ring-2 ring-blue-400 m-2' : ''}`}
+                    className={`flex draggable-item items-center cursor-grab select-none p-2 rounded transition-all duration-800 hover:translate-y-[-1px] w-fit hover:bg-gray-600 ${isMobile && selectedElement?.id === id ? 'ring-2 ring-blue-400 m-2 bg-gray-600' : ''}`}
                     draggable={!isMobile}
                     onDragStart={(e) => !isMobile && onDragStart && onDragStart(e, data)}
                     onClick={() => handleElementClick(data)}
