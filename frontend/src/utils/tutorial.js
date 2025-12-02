@@ -37,7 +37,7 @@ const startTutorial = (screenType) => {
                 {
                     element: document.querySelector('#edit-area'),
                     intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
-                    position: 'right'
+                    position: 'bottom'
                 },
                 {
                     element: document.querySelector('#Stacks'),
