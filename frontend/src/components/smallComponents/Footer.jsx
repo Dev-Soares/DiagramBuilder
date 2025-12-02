@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom"
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -12,68 +13,50 @@ const Footer = () => {
                     <h3 className='text-2xl font-bold'>ProjectBuilder</h3>
                     
                     <div className='flex gap-4 mt-2'>
-                        <p href="" className='hover:text-purple-300 transition-colors'>
-                            <span className="material-symbols-outlined text-3xl">code</span>
+                        
+                        <p className='hover:text-purple-300 transition-colors'>
+                            <span className="material-symbols-outlined text-3xl!">code</span>
                         </p>
-                        <p href="" className='hover:text-purple-300 transition-colors'>
-                            <span className="material-symbols-outlined text-3xl">cloud</span>
-                        </p>
-                        <p href="" className='hover:text-purple-300 transition-colors'>
-                            <span className="material-symbols-outlined text-3xl">storage</span>
-                        </p>
+                        <a
+                            href="https://github.com/bernardosoares30"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-purple-300 transition-colors"
+                            title="Github"
+                        >
+                            <FaGithub size={32} />
+                        </a>
+                        {/* LinkedIn */}
+                        <a
+                            href="https://www.linkedin.com/in/bernardosoares30/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-purple-300 transition-colors"
+                            title="LinkedIn"
+                        >
+                            <FaLinkedin size={32} />
+                        </a>
                     </div>
                 </div>
-
-                
-                <div className='flex flex-col gap-3'>
-                    <h4 className='text-lg font-semibold mb-2'>Links Rápidos</h4>
-                    <button 
-                        onClick={() => navigate('/')} 
-                        className='text-gray-300 hover:text-white text-left transition-colors'
-                    >
-                        Início
-                    </button>
-                    <button 
-                        onClick={() => navigate('/create-diagram')} 
-                        className='text-gray-300 hover:text-white text-left transition-colors'
-                    >
-                        Criar Diagrama
-                    </button>
-                    <a href="#details" className='text-gray-300 hover:text-white transition-colors'>
-                        Recursos
-                    </a>
-                    <a href="#guide" className='text-gray-300 hover:text-white transition-colors'>
-                        Como Funciona
-                    </a>
-                </div>
-
-                
-                <div className='flex flex-col gap-3'>
-                    <h4 className='text-lg font-semibold mb-2'>Recursos</h4>
-                    <a href="#" className='text-gray-300 hover:text-white transition-colors'>
-                        Documentação
-                    </a>
-                    <a href="#" className='text-gray-300 hover:text-white transition-colors'>
-                        Suporte
-                    </a>
-                    <a href="#" className='text-gray-300 hover:text-white transition-colors'>
-                        API
-                    </a>
-                    <a href="#" className='text-gray-300 hover:text-white transition-colors'>
-                        Blog
-                    </a>
-                </div>
-
-                
                 <div className='flex flex-col gap-3'>
                     <h4 className='text-lg font-semibold mb-2'>Contato</h4>
                     <a href="mailto:bernardo.soares30@outlook.com" className='text-gray-300 hover:text-white transition-colors flex items-center gap-2'>
-                        <span className="material-symbols-outlined">mail</span>
+                        <span className="material-symbols-outlined text-3xl!">mail</span>
                         bernardo.soares30@outlook.com
                     </a>
                     <a href="#" className='text-gray-300 hover:text-white transition-colors flex items-center gap-2'>
-                        <span className="material-symbols-outlined">location_on</span>
+                        <span className="material-symbols-outlined text-3xl!">location_on</span>
                         Brasil
+                    </a>
+                    <a href="https://github.com/Dev-Soares" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2
+                    text-gray-300 hover:text-white transition-colors ">
+                        <FaGithub size={32} />
+                        Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/bernardo-soares-150096364/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2
+                    text-gray-300 hover:text-white transition-colors ">
+                        <FaLinkedin size={32} />
+                        LinkedIn
                     </a>
                 </div>
             </div>
@@ -83,9 +66,9 @@ const Footer = () => {
                 <div className='max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300'>
                     <p>© {currentYear} ProjectBuilder.  Todos os direitos reservados.</p>
                     <div className='flex gap-6'>
-                        <a href="#" className='hover:text-white transition-colors'>Privacidade</a>
-                        <a href="#" className='hover:text-white transition-colors'>Termos de Uso</a>
-                        <a href="#" className='hover:text-white transition-colors'>Cookies</a>
+                        <p href="#" className='hover:text-white transition-colors'>Privacidade</p>
+                        <p href="#" className='hover:text-white transition-colors'>Termos de Uso</p>
+                        <p href="#" className='hover:text-white transition-colors'>Cookies</p>
                     </div>
                 </div>
             </div>
