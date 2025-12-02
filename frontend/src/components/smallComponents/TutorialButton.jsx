@@ -1,19 +1,13 @@
 import startTutorial from '../../utils/tutorial';
 import { useState, useEffect } from 'react';
 
+const isMobileDevice = () => {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 768;
+}
+
 const TutorialButton = () => {
 
-    const [screenType, setScreenType] = useState('desktop');
-
-    useEffect(() => {
-        if (window.innerWidth < 768) {
-            setScreenType('mobile');
-        } else {
-            setScreenType('desktop');
-        }
-    }, []);
-
-    
+  const [screenType, setScreenType] = useState(isMobileDevice() ? 'mobile' : 'desktop');
 
     return (
         <div className="flex flex-col justify-start items-start mb-6 gap-2 opacity-0 animate-fadeIn w-full relative">

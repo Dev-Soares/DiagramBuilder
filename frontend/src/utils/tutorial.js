@@ -2,11 +2,11 @@ import introJs from 'intro.js';
 import 'intro.js/introjs.css';
 
 const startTutorial = (screenType) => {
-        introJs().setOptions({
+
+        introJs.tour().setOptions({
             steps: screenType === 'desktop' ? [
                 {
-                    intro: "Bem-vindo ao Diagram Builder! Vamos começar ?",
-                    position: 'left'
+                    intro: "Bem-vindo ao Project Builder! Vamos começar ?",
                 },
                 {
                     element: document.querySelector('.react-flow__pane'),
@@ -14,18 +14,20 @@ const startTutorial = (screenType) => {
                 },
                 {
                     element: document.querySelector('#edit-area'),
-                    intro: "Aqui está a barra lateral de edição do projeto. Você pode alterar o nome do diagrama e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    position: 'right'
                 },
                 {
                     element: document.querySelector('#Stacks'),
-                    intro: "Estes são alguns dos vários elementos que podem ser inseridos no seu projeto. Clique e arraste qualquer elemento até a área de trabalho para começar a construir seu diagrama!",
+                    intro: "Estes são alguns dos vários elementos que podem ser inseridos no seu projeto. Clique e arraste qualquer elemento até a área de trabalho para começar a construir seu projeto!",
+                    position: 'right'
                 },
                 {
-                    intro: "Divirta-se criando seus diagramas!",
+                    intro: "Divirta-se criando seus projetos!",
                 }
             ] : [
                 {
-                    intro: "Bem-vindo ao Diagram Builder! Vamos começar ?",
+                    intro: "Bem-vindo ao Project Builder! Vamos começar ?",
                     position: 'left'
                 },
                 {
@@ -34,14 +36,15 @@ const startTutorial = (screenType) => {
                 },
                 {
                     element: document.querySelector('#edit-area'),
-                    intro: "Aqui está a barra lateral de edição do projeto. Você pode alterar o nome do diagrama e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    position: 'right'
                 },
                 {
                     element: document.querySelector('#Stacks'),
-                    intro: "Estes são alguns dos vários elementos que podem ser inseridos no seu projeto. Clique em algum elemento para selecioná-lo e depois toque na área de trabalho para adicioná-lo ao seu diagrama!",
+                    intro: " Clique em algum elemento para selecioná-lo e depois toque na área de trabalho para adicioná-lo ao seu projeto!",
                 },
                 {
-                    intro: "Divirta-se criando seus diagramas!",
+                    intro: "Divirta-se criando seus projetos!",
                 }
             ]
         }).start();

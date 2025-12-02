@@ -13,10 +13,59 @@ body {
   font-family: "Inter", "sans-serif";
 }
 
-.draggable-item {
-  /* touch-action: pan-y permite scroll vertical no mobile, mas bloqueia horizontal (drag) */
-  touch-action: pan-y;
-  -webkit-user-drag: element;
+.introjs-tooltip {
+  background: #221f23 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700 !important;
+  font-size: larger !important;
+}
+
+.introjs-button.introjs-nextbutton, .introjs-button.introjs-prevbutton {
+  color: #551aa3 !important;
+  background: #ffffff !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.introjs-button.introjs-nextbutton:hover, .introjs-button.introjs-prevbutton:hover {
+  background: #7d37d8 !important;
+  color: #ffffff !important;
+  transition: all 0.5s ease-in-out !important;
+  transform: translateY(-2px) !important;
+}
+
+.introjs-skipbutton {
+  color: #551aa3 !important;
+  background: transparent !important;
+  font-size: 2rem !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  cursor: pointer !important;
+  transition: color 0.2s;
+}
+
+.introjs-skipbutton:hover {
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+.introjs-closeButton:hover {
+  color: #7d37d8 !important;
+  background: transparent !important;
+}
+
+.introjs-overlay {
+  background: rgba(34, 34, 34, 0.7) !important;
 }
 
 @layer utilities {
