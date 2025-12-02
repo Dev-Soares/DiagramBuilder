@@ -14,13 +14,18 @@ const startTutorial = (screenType) => {
                 },
                 {
                     element: document.querySelector('#edit-area'),
-                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, entre outras funções.",
                     position: 'bottom'
                 },
                 {
                     element: document.querySelector('#Stacks'),
                     intro: "Estes são alguns dos vários elementos que podem ser inseridos no seu projeto. Clique e arraste qualquer elemento até a área de trabalho para começar a construir seu projeto!",
                     position: 'right'
+                },
+                {
+                    element: document.querySelector('#edit-area'),
+                    intro: "Para compartilhar seu projeto, use o botão de copiar ID para compartilhá-lo com seus colegas, ou apenas envie o link da página!",
+                    position: 'bottom'
                 },
                 {
                     intro: "Divirta-se criando seus projetos!",
@@ -36,7 +41,7 @@ const startTutorial = (screenType) => {
                 },
                 {
                     element: document.querySelector('#edit-area'),
-                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, além de copiar o ID para compartilhar com outros usuários.",
+                    intro: "Aqui está a barra lateral de edição. Você pode alterar o nome do projeto e salvar seu progresso, entre outras funções.",
                     position: 'bottom'
                 },
                 {
@@ -44,8 +49,13 @@ const startTutorial = (screenType) => {
                     intro: " Clique em algum elemento para selecioná-lo e depois toque na área de trabalho para adicioná-lo ao seu projeto!",
                 },
                 {
+                    element: document.querySelector('#edit-area'),
+                    intro: "Para compartilhar seu projeto, use o botão de copiar ID para compartilhá-lo com seus colegas, ou apenas envie o link da página!",
+                    position: 'bottom'
+                },
+                {
                     intro: "Divirta-se criando seus projetos!",
-                }
+                },
             ]
         }).start();
     };

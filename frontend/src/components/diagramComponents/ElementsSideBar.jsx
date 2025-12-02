@@ -6,6 +6,7 @@ import { useDiagram } from '../../contexts/DiagramContext.jsx';
 import { useDiagramActions } from '../../hooks/useDiagramActions.js';
 import { useReactFlow } from '@xyflow/react';
 import TutorialButton from '../smallComponents/TutorialButton.jsx';
+import ShareButton from '../smallComponents/ShareButton.jsx';
 
 const ElementsSideBar = () => {
 
@@ -20,11 +21,6 @@ const ElementsSideBar = () => {
     const { saveFlowData } = useDiagramActions();
 
     const [textIsCopied, setTextIsCopied] = useState(false);
-
-    const onDragStart = (event, el) => {
-        event.dataTransfer.setData('application/reactflow', JSON.stringify(el));
-        event.dataTransfer.effectAllowed = 'move';
-    };
 
     const copyIdToClipboard = (text) => {
         navigator.clipboard.writeText(text).then(() => {
@@ -67,7 +63,7 @@ const ElementsSideBar = () => {
                                         <span className="material-symbols-outlined"> content_copy </span>
                                         <span>Copiar ID</span>
                                     </>)}</button>
-
+                            <ShareButton />
                         </div>
                     </div>
                     <TutorialButton />
@@ -77,7 +73,6 @@ const ElementsSideBar = () => {
                         <h2 className='lg:text-lg xl:text-xl ml-9 md:ml-3 text-white self-start'>Elementos</h2>
                         <div className='flex flex-col flex-wrap gap-4 my-12 m-3 ml-2'>
                             <ElementList
-                                onDragStart={onDragStart}
                             />
                         </div>
                     </div>

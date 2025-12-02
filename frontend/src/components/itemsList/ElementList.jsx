@@ -2,7 +2,13 @@ import { useState } from "react";
 import languageIcons from "../../icons/languageIcons";
 import { useDiagram } from '../../contexts/DiagramContext.jsx';
 
-const ElementList = ({ onDragStart }) => {
+const ElementList = () => {
+
+  const onDragStart = (event, el) => {
+        event.dataTransfer.setData('application/reactflow', JSON.stringify(el));
+        event.dataTransfer.effectAllowed = 'move';
+    };
+
   const [expandedCategories, setExpandedCategories] =  useState(() =>
   Object.fromEntries(languageIcons.map(group => [group.category, true]))
 );
